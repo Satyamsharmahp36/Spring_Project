@@ -1,17 +1,21 @@
 package com.satyam.market_place.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
 
 @Entity
+@Table
 public class Product {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "Item_name")
     private String name;
+    @Column
     private  int price;
+    @Column
     private int quantity;
 
     public Product() {
